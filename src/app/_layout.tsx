@@ -5,6 +5,8 @@ export default function RootLayout() {
     <Stack screenOptions={{ contentStyle: { backgroundColor: "#242329" } }}>
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="about" options={{ headerShown: false }} />
+      <Stack.Screen name="contact" options={{ headerShown: false }} />
+      <Stack.Screen name="burger/[id]/page" options={{ headerShown: false }} />
     </Stack>
   )
 }
