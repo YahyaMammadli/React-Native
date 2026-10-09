@@ -1,56 +1,101 @@
-# Welcome to your Expo app 👋
+<div align="center">
+  <img src="./assets/images/burger.png" alt="Juicy burger" width="220" />
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+  # Burger House
+
+  **A little taste of something extraordinary.**
+
+  A mobile-first burger menu built with Expo and React Native. Browse the menu,
+  find your favorite, and make it yours.
+
+  <br />
+
+  ![Expo SDK 57](https://img.shields.io/badge/Expo-SDK%2057-4630EB?logo=expo&logoColor=white)
+  ![React Native 0.86](https://img.shields.io/badge/React%20Native-0.86-61DAFB?logo=react&logoColor=black)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-ready-3178C6?logo=typescript&logoColor=white)
+</div>
+
+---
+
+## The menu, made delightful
+
+Explore a curated burger menu in a warm, dark interface designed for browsing on
+your phone. Filter by **Beef**, **Chicken**, or **Vegetarian**, check out the
+featured picks, and open any burger for a closer look.
+
+### What you can do
+
+- Browse featured picks and the full burger menu.
+- Filter the menu by category.
+- View burger descriptions and prices on a dedicated detail screen.
+- Adjust the quantity and see the total update instantly.
+- Try the add-to-cart interaction on the detail screen.
+- Run the app on Android, iOS, or the web.
+
+> **Note:** This is a UI prototype. Menu items are local mock data, and cart
+> interactions are for demonstration; no order is sent or saved.
 
 ## Get started
 
-1. Install dependencies
+### Requirements
 
-   ```bash
-   npm install
-   ```
+- Node.js (LTS recommended)
+- npm
+- For Android or iOS: a configured native development environment, or a
+  compatible Expo development build
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### Install and run
 
 ```bash
-npm run reset-project
+npm install
+npm run start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Use the Expo CLI prompts to open the app on a connected device or simulator.
 
-### Other setup steps
+| Platform | Command |
+| --- | --- |
+| Android | `npm run android` |
+| iOS | `npm run ios` |
+| Web | `npm run web` |
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+> The Android and iOS scripts run native projects and require the corresponding
+> platform development tools. The iOS simulator requires macOS.
 
-## Learn more
+## Project structure
 
-To learn more about developing your project with Expo, look at the following resources:
+```text
+src/
+├── app/                  # Expo Router screens
+│   ├── burger/[id]/      # Burger detail screen
+│   ├── about.tsx
+│   ├── contact.tsx
+│   ├── index.tsx         # Menu home screen
+│   └── _layout.tsx       # Navigation layout
+├── components/           # Reusable UI
+├── mock/                 # Local burger menu data
+└── types/                # Shared TypeScript types
+assets/
+└── images/               # App and menu imagery
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Tech stack
 
-## Join the community
+- [Expo SDK 57](https://docs.expo.dev/versions/v57.0.0/)
+- [React Native](https://reactnative.dev/)
+- [Expo Router](https://docs.expo.dev/versions/v57.0.0/sdk/router/)
+- TypeScript
+- `expo-image` and `expo-linear-gradient`
 
-Join our community of developers creating universal apps.
+## Useful commands
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npm run lint       # Check code with Expo ESLint
+npx tsc --noEmit   # Type-check the project
+```
+
+---
+
+<div align="center">
+  Made with 🍔 and React Native
+</div>
