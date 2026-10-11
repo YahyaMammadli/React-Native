@@ -1,16 +1,16 @@
 import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 
 export default function RootLayout() {
   return (
-    <>
-      <StatusBar style="light" />
-      <Stack screenOptions={{ contentStyle: { backgroundColor: "#242329" } }}>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="about" options={{ headerShown: false }} />
-        <Stack.Screen name="contact" options={{ headerShown: false }} />
-        <Stack.Screen name="burger/[id]/page" options={{ headerShown: false }} />
-      </Stack>
-    </>
+    <Stack screenOptions={{ contentStyle: { backgroundColor: "#242329" } }}>
+      <Stack.Screen name="launch" options={{ headerShown: false }} />
+      <Stack.Screen name="auth/signin" options={{ headerShown: false }} />
+      <Stack.Screen name="auth/signup" options={{ headerShown: false }} />
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="home" options={{ headerShown: false }} />
+      <Stack.Screen name="about" options={{ headerShown: false }} />
+      <Stack.Screen name="contact" options={{ headerShown: false }} />
+      <Stack.Screen name="burger/[id]/page" options={{ headerShown: false }} />
+    </Stack>
   )
 }

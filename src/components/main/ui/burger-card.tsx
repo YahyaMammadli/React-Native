@@ -7,62 +7,69 @@ export interface BurgerCardProps {
     title: string;
     shortDescription: string;
     price: number;
-
 }
 
 export default function BurgerCard({ item }: { item: BurgerCardProps }) {
     return (
-        <View key={item.id} style={styles.burgerContainer}>
-            <Image source={require("../../../../assets/images/burger.png")} style={styles.burgerImage} />
+        <View style={styles.container}>
+            <Image
+                source={require("../../../../assets/images/burger.png")}
+                style={styles.image}
+                contentFit="contain"
+            />
             <View>
-                <Text style={styles.burgerText}>{item.title}</Text>
-                <Text style={styles.burgerShortDescription}>{item.shortDescription}</Text>
+                <Text style={styles.title} numberOfLines={1}>{item.title}</Text>
+                <Text style={styles.description} numberOfLines={1}>{item.shortDescription}</Text>
             </View>
-            <View style={styles.burgerPriceContainer}>
-                <Text style={styles.burgerPrice}>Rs. {item.price}</Text>
-                <TouchableOpacity style={styles.addToCartButton}>
-                    <Ionicons name="add-outline" size={24} color="black" />
+            <View style={styles.priceRow}>
+                <Text style={styles.price}>Rs {item.price}.00</Text>
+                <TouchableOpacity style={styles.addButton} accessibilityLabel="Add to cart">
+                    <Ionicons name="add" size={16} color="white" />
                 </TouchableOpacity>
             </View>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
-    burgerImage: {
-        width: "100%",
-        height: 250,
-    },
-    burgerContainer: {
+    container: {
+        width: 170,
         borderWidth: 1,
         borderColor: "#81521F",
-        borderRadius: 10,
-        padding: 10,
-        gap: 10,
+        borderRadius: 14,
+        paddingHorizontal: 10,
+        paddingVertical: 8,
+        gap: 6,
     },
-    burgerText: {
+    image: {
+        width: "100%",
+        height: 90,
+    },
+    title: {
         color: "#fff",
-        fontSize: 22,
-        fontWeight: "bold",
+        fontSize: 13,
+        fontWeight: "700",
     },
-    burgerShortDescription: {
-        color: "#666",
-        fontSize: 14,
-        fontWeight: "400",
+    description: {
+        color: "#D8D8D8",
+        fontSize: 10,
     },
-    burgerPriceContainer: {
+    priceRow: {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
     },
-    burgerPrice: {
+    price: {
         color: "#fff",
-        fontSize: 32,
-        fontWeight: "bold",
+        fontSize: 12,
+        fontWeight: "700",
     },
-    addToCartButton: {
-        backgroundColor: "#fff",
-        padding: 10,
-        borderRadius: 100,
+    addButton: {
+        width: 20,
+        height: 20,
+        borderRadius: 10,
+        backgroundColor: "#000",
+        alignItems: "center",
+        justifyContent: "center",
     },
-})
+});
